@@ -1,0 +1,36 @@
+<h1>Listing interesting_things</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Student</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interesting_things.each_with_index do |interesting_thing, index| %>
+      <tr>
+        <td><%= index + 1 %>)</td>
+        <td><%= interesting_thing.name %></td>
+        <td><%= interesting_thing.student.name %></td>
+      </tr>
+    <% end %>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <% @other_interesting_things.each_with_index do |interesting_thing, index| %>
+    <tr>
+      <td><%= index + 1 %>)</td>
+      <td><%= interesting_thing.name %></td>
+      <td>_________________________</td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interesting thing', new_student_interesting_thing_path %>
