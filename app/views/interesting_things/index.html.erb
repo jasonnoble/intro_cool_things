@@ -1,4 +1,4 @@
-<h1>Listing interesting_things</h1>
+<h1>Listing interesting_things for <%= @student.name %></h1>
 
 <table>
   <thead>
@@ -14,7 +14,6 @@
       <tr>
         <td><%= index + 1 %>)</td>
         <td><%= interesting_thing.name %></td>
-        <td><%= interesting_thing.student.name %></td>
       </tr>
     <% end %>
     <tr><td></td></tr>
