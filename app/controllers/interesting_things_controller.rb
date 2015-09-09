@@ -8,7 +8,7 @@ class InterestingThingsController < ApplicationController
     @interesting_things = @student.interesting_things
     @other_interesting_things = Student.all.select{|user| user.name != @student.name}.map do|student|
       student.interesting_things.sample
-    end
+    end.compact
   end
 
   # GET /interesting_things/1
