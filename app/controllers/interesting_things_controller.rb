@@ -6,8 +6,8 @@ class InterestingThingsController < ApplicationController
   # GET /interesting_things.json
   def index
     @interesting_things = @student.interesting_things
-    @other_interesting_things = Student.all.select{|user| user.name != @student.name}.map do|student|
-      student.interesting_things.sample
+    @other_interesting_things = Student.where.not(id: @student.id).map do|student|
+      student.interesting_things[@student.id % Student.count]
     end.compact
   end
 
