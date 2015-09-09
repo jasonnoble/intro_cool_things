@@ -7,7 +7,7 @@ class InterestingThingsController < ApplicationController
   def index
     @interesting_things = @student.interesting_things
     @other_interesting_things = Student.where.not(id: @student.id).map do|student|
-      student.interesting_things[@student.id % Student.count]
+      student.interesting_things[@student.id % Student.count] || student.interesting_things.sample
     end.compact
   end
 
