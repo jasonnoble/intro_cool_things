@@ -7,7 +7,7 @@ class Ability
     user ||= Student.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
-    else
+    elsif user.persisted?
       can :read, Student
       can :manage, InterestingThing, student_id: user.id
     end
