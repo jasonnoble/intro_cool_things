@@ -8,7 +8,6 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.persisted?
-      can :read, Student
       can :manage, Student, id: user.id
       can :manage, InterestingThing, student_id: user.id
     end
