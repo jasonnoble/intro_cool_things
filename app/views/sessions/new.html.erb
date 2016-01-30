@@ -1,0 +1,7 @@
+<h2>Login</h2>
+
+<%= form_tag login_path do %>
+    <p>
+      <%= link_to button_tag('Sign in via Github', class: 'btn-auth btn-github'), '/auth/github' %>
+    </p>
+<% end %>

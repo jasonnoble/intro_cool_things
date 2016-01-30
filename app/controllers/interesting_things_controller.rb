@@ -1,4 +1,6 @@
 class InterestingThingsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_student
   before_action :set_interesting_thing, only: [:show, :edit, :update, :destroy]
 
