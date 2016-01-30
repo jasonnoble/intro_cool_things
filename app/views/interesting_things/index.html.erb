@@ -15,12 +15,14 @@
     <tr><td></td></tr>
     <tr><td></td></tr>
     <tr><td></td></tr>
-    <% @other_interesting_things.each_with_index do |interesting_thing, index| %>
-    <tr>
-      <td><%= index + 1 %>)</td>
-      <td><%= interesting_thing.name %></td>
-      <td>_________________________</td>
-    </tr>
+    <% if current_user.admin? %>
+      <% @other_interesting_things.each_with_index do |interesting_thing, index| %>
+      <tr>
+        <td><%= index + 1 %>)</td>
+        <td><%= interesting_thing.name %></td>
+        <td>_________________________</td>
+      </tr>
+    <% end %>
   <% end %>
   </tbody>
 </table>
