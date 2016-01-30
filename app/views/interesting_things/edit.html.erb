@@ -2,5 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @interesting_thing %> |
-<%= link_to 'Back', interesting_things_path %>
+<%= link_to 'Back', student_interesting_things_path(@interesting_thing.student) %>
