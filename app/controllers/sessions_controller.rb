@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def oauth
     @student = Student.where(
                         email: omniauth_options[:email]
-    ).first_or_initialize(omniauth_options)
+    ).first_or_create(omniauth_options)
     if @student.persisted?
       session[:id] = @student.id
       redirect_to root_path,
