@@ -12,10 +12,12 @@
     <% @students.each do |student| %>
       <tr>
         <td><%= student.name %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Interesting Things', student_interesting_things_path(student) %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :edit, student %>
+          <td><%= link_to 'Show', student %></td>
+          <td><%= link_to 'Interesting Things', student_interesting_things_path(student) %></td>
+          <td><%= link_to 'Edit', edit_student_path(student) %></td>
+          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
