@@ -11,7 +11,7 @@
         <td><%= interesting_thing.name %></td>
         <% if can? :manage, interesting_thing %>
           <td><%= link_to 'Edit', edit_student_interesting_thing_path(interesting_thing.student, interesting_thing) %></td>
-          <td><%= link_to 'Destroy', interesting_thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', student_interesting_thing(interesting_thing.student, interesting_thing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
